@@ -14,16 +14,16 @@ import java.io.File;
 public class Cd extends Command {
 
     @Override
-    public String execute(File actualDir) {
+    public String execute(CmdEditor editor) {
         String dir = null;
         if (params.length == 2) {
             if (params[1].equals("..")) {
-                dir = actualDir.getParentFile().getName();
+                dir = editor.getActualDir().getParentFile().getAbsolutePath();
             } else {
-                File[] files = actualDir.listFiles();
+                File[] files = editor.getActualDir().listFiles();
                 for (File file : files) {
                     if (file.isDirectory() && file.getName().equals(params[1])) {
-                        dir = file.getName();
+                        dir = editor.getActualDir().getAbsolutePath() + "\\\\" + file.getName();
                         break;
                     }
                 }

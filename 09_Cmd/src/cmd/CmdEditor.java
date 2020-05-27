@@ -22,8 +22,8 @@ public class CmdEditor implements CmdInterface {
     }
 
     @Override
-    public String getActualDir() {
-        return actualDir.getAbsolutePath();
+    public File getActualDir() {
+        return actualDir;
     }
 
     @Override
@@ -31,8 +31,8 @@ public class CmdEditor implements CmdInterface {
         //parse
         command = Parser.parse(line);
         //execute 
-        String s = command.execute(actualDir);
-        actualDir = new File(actualDir.getAbsolutePath() + "\\\\" + s);
+        String s = command.execute(this);
+        if (command.params != null && command.params[0].equals("cd")) actualDir = new File(s);
         return s;
     }
 }

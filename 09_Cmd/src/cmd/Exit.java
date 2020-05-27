@@ -14,7 +14,7 @@ import java.io.File;
 public class Exit extends Command {
 
     @Override
-    public String execute(File actualDir) {
+    public String execute(CmdEditor editor) {
         if (params.length == 1) System.exit(0);
         return null;
     }

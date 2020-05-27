@@ -9,10 +9,11 @@ import java.io.File;
 public class Help extends Command {
 
     @Override
-    public String execute(File actualDir) {
+    public String execute(CmdEditor editor) {
         String help = "HELP\n"
                 + String.format("%-7s %s\n", "dir", "Display a list of files and folders")
                 + String.format("%-7s %s\n", "dir [-o]", "Display an ordered list of files and folders")
+                + String.format("%-7s %s\n", "dir [-r]", "Recursively display a list of files, folders, files in those folders...")
                 + String.format("%-7s %s\n", "dir [-e] [file extension]", "Display a list of files and folders with a specified extension")
                 + String.format("%-7s %s\n", "dir [-s] [size]", "Display a list of files and folders bigger than a specified size")
                 + String.format("%-7s %s\n", "cd [folder name]", "Change directore - move to a specific folder")

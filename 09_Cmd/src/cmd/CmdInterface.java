@@ -5,6 +5,8 @@
  */
 package cmd;
 
+import java.io.File;
+
 /**
  *
  * @author janka
@@ -13,8 +15,7 @@ public interface CmdInterface {
 
     public boolean isRunning();
 
-    public String getActualDir();
+    public File getActualDir();
 
     public String parseAndExecute(String line);
-    
 }

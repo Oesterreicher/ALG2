@@ -14,7 +14,7 @@ import java.io.File;
 public class Mkdir extends Command {
 
     @Override
-    public String execute(File actualDir) {
+    public String execute(CmdEditor editor) {
         if (params.length == 2) {
             File f = new File(params[1]);
             f.mkdirs();

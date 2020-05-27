@@ -14,10 +14,10 @@ import java.io.File;
 public class Rename extends Command {
 
     @Override
-    public String execute(File actualDir) {
+    public String execute(CmdEditor editor) {
         if (params.length == 3) {
-            File originalName = new File(actualDir.getAbsolutePath() + "\\\\" + params[1]);
-            File newName = new File(actualDir.getAbsolutePath() + "\\\\" + params[2]);
+            File originalName = new File(editor.getActualDir().getAbsolutePath() + "\\\\" + params[1]);
+            File newName = new File(editor.getActualDir().getAbsolutePath() + "\\\\" + params[2]);
             originalName.renameTo(newName);
         }
         return null;

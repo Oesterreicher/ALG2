@@ -13,7 +13,7 @@ public class Parser {
             String name =  Command.COMMAND_PACKAGE + "." + first + p[0].substring(1); //cmd.Dir
         try {
             Class c = Class.forName(name);
-            Command command = (Command) c.newInstance();
+            Command command = (Command)c.newInstance();
             command.setParams(p);
             return command;
         } catch (Exception e) {
